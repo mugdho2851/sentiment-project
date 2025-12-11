@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+transformers
+torch
+sentence-transformers
+faiss-cpu
+flask
+gradio
+pandas
+numpy
+python-multipart
+requests
+typing_extensions
+gunicorn

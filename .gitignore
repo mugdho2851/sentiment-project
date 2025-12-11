@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+models/*
+!models/distilbert-sst2/  # allow the folder but you may want to exclude big files
+vector_data/
+*.log
+.env

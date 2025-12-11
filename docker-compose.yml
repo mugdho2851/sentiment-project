@@ -1,0 +1,40 @@
+services:
+  vectorstore:
+    build:
+      context: .
+      dockerfile: ./vectorstore_service/Dockerfile
+    container_name: vectorstore
+    volumes:
+      - ./vector_data:/data
+    environment:
+      - EMBED_DIM=768
+      - VECTORSTORE_DATA_DIR=/data
+    ports:
+      - "8001:8001"
+
+  api:
+    build:
+      context: .
+      dockerfile: ./api_service/Dockerfile
+    container_name: api
+    volumes:
+      - ./models/distilbert-sst2:/models/distilbert-sst2:ro
+    environment:
+      - MODEL_DIR=/models/distilbert-sst2
+      - VECTORSTORE_URL=http://vectorstore:8001
+    ports:
+      - "8000:8000"
+    depends_on:
+      - vectorstore
+
+  ui:
+    build:
+      context: .
+      dockerfile: ./ui_service/Dockerfile
+    container_name: ui
+    environment:
+      - API_URL=http://api:8000
+    ports:
+      - "7880:7880"
+    depends_on:
+      - api

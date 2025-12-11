@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+transformers
+torch
+requests
+numpy
+pandas
+protobuf
+sentence-transformers
