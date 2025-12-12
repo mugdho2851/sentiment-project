@@ -1,7 +1,99 @@
+# Python
 __pycache__/
-*.pyc
-models/*
-!models/distilbert-sst2/  # allow the folder but you may want to exclude big files
-vector_data/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Virtual environments
+venv/*
+.env/
+.env.bak/
+.venv/
+env/
+ENV/
+
+# PyCharm & VS Code
+.idea/
+.vscode/
+*.code-workspace
+
+# Logs
 *.log
-.env
+*.out
+*.err
+
+# Environment files
+*.env
+*.ini
+
+# Cache
+.cache/
+*.cache
+.tmp/
+temp/
+tmp/
+
+# ML / LLM / HuggingFace models
+models/
+model/
+saved_models/
+checkpoints/
+weights/
+wheels/
+api_service/
+report/
+scripts/
+ui_service/
+vector_data/
+vectorstore_service/
+*.yml
+*.txt
+*.README.md
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# Transformers cache
+~/.cache/huggingface/
+huggingface/
+
+# LlamaIndex / Chroma / FAISS
+storage/
+vectorstore/
+db/
+chroma/
+index/
+faiss_index/
+
+# Docker
+docker_data/
+docker_volume/
+.docker/
+
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+
+# TEMP IGNORE
+Dockerfile
+docker-compose.yml
+*/Dockerfile
+*/docker-compose.yml
+
